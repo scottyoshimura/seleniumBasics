@@ -27,7 +27,7 @@ public class browserInvoce {
 		//remember, WebDriver is the interface that defines the methods that are capable. FirefoxDriver has all the classes to actually execute the methods. you need a class to implement and execute the methods in the webdriver interface.
 		*/
 
-		/*below are ways to manage the chrome driver. when working with chrome or IE, selenium works with Firefox. selenium is built in firefox. not the case with crhome and IE. there is one more layer. you need to execute that layer.
+/*below are ways to manage the chrome driver. when working with chrome or IE, selenium works with Firefox. selenium is built in firefox. not the case with crhome and IE. there is one more layer. you need to execute that layer.
 		//much like gecko driver, we have to set the system properties to set up the middle layer
 		//System.setProperty("webdriver.chrome.driver" , "/Users/scottyoshimura/documents/javaJars/chromedriver");
 		//lets set up the chrome driver
