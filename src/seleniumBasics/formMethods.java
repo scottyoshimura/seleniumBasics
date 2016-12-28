@@ -1,5 +1,6 @@
 package seleniumBasics;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -19,6 +20,10 @@ public class formMethods {
 		
 	//below is how we can determing if some web element is present in the code and showing using isDisplayed()
 		System.out.println("before clicking on multi city option");
+		
+	//lets start using assertions. with the below assertTrue, if it is True, it will continue forward in the scsript. if not it will fail.
+		Assert.assertTrue(driver.findElement(By.xpath(".//*[@id='return_date_sec']")).isDisplayed());
+		
 		//below we use isDisplayed as a true or false to see if something is on the screen or not.
 		System.out.println(driver.findElement(By.xpath(".//*[@id='return_date_sec']")).isDisplayed());
 		//driver.findElement(By.xpath(".//*[@id='multi_city_button']/span")).click();
