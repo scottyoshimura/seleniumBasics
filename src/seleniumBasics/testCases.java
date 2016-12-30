@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import junit.framework.Assert;
 
@@ -14,12 +16,24 @@ public class testCases {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		WebDriver driver;
+		System.setProperty("webdriver.gecko.driver" , "/Users/scottyoshimura/documents/javaJars/geckodriver");
+		driver =new FirefoxDriver();
+		driver.get("https://fantasycricket.dream11.com/IN/");
 		
-		System.setProperty("webdriver.chrome.driver" , "/Users/scottyoshimura/documents/javaJars/chromedriver");
-		//lets set up the chrome driver
-		WebDriver driver=new ChromeDriver();
-		driver.get("http://www.ebay.com");
+		//lets use an explicit wait
+		//this says it will wait for an element with a max time of 5 seconds
+		//you use explicit waits 
+		WebDriverWait wd= new WebDriverWait(driver,5);
+		//now we can use the WebDriverWait object.
+		//lets click on the email box
+		driver.findElement(By.xpath("//*[@id='m_rtxtEmail1']")).sendKeys("000");
+		//and wait for the drop down values to appear
+		wd.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='m_frmRegister']/div[1]/ul")));
 		
+
+		
+	/*
 		//lets get the count of the total link count
 		System.out.println(driver.findElements(By.tagName("a")).size());
 		//System.out.print("\n");
@@ -60,6 +74,8 @@ public class testCases {
 			System.out.println("fail");
 		}
 		System.out.println(driver.getTitle());
+		
+		*/
 		
 		
 	}
